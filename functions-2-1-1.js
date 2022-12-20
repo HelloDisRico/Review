@@ -69,21 +69,52 @@ multiplyArray = (anotherArray) => {
 /*
 5.Write a function that returns the number of arguments passed to the function when called.
 */
+function numArgs() { 
+  return arguments.length;
+} 
 
 /*
 6. Define a function reverseString that computes the reversal of a string. For example, reverseString("jag testar") should return the string "ratset gaj".
 */
 
-reverseString = () => {
+//reverseString = () => {
   // ADD YOUR CODE HERE
-};
+ // program to reverse a string
+
+function reverseString(str) {
+
+  // empty string
+  let newString = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+      newString += str[i];
+  }
+  return newString;
+}
+
+const string = prompt('Insert Text');
+
+const result = reverseString(string);
+console.log(result);
+//};
 
 /*
 7. Write a function findLongestWord that takes an array of words and returns the length of the longest one.
 */
 findLongestWord = () => {
   // ADD YOUR CODE HERE
-};
+};function findLongestWord(str) {
+
+  let words = str.split(' ');
+  let longest = 0;
+
+  for (let i=0;i<words.length;i++) {
+       if (words[i].length > longest) {
+            longest = words[i].length;
+       }  
+  }
+
+  return longest;
+}
 
 /*
 8. Write a function filterLongWords that takes an array of words and a number i and returns the array of words that are longer than i characters long.
@@ -91,3 +122,21 @@ findLongestWord = () => {
 filterLongWords = () => {
   // ADD YOUR CODE HERE
 };
+function getLongestWord(str){
+  let words = str.split(' ');
+  let maxLength = 0;
+  let longestWord = '';
+
+  for (let i = 0; i < words.length; i++) {
+    if (words[i].length > maxLength) {
+      maxLength = words[i].length;
+      longestWord = words[i];
+    }
+  }
+
+  console.log(maxLength);
+  console.log(longestWord);
+
+}
+
+getLongestWord();
